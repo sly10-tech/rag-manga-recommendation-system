@@ -4,7 +4,7 @@ from google import genai
 from .ingest import Chunk
 
 # Your Google AI Studio API Key
-API_KEY = "AQ.Ab8RN6KeHlmTPgfw7KwJSvLhU1C4ZiacGfaUMx353WqzT_r2nQ"
+API_KEY = os.environ.get("GEMINI_API_KEY", "YOUR_GEMINI_API_KEY_HERE")
 
 
 def extractive_answer(query: str, retrieved: List[Tuple[Chunk, float]], similarity_threshold: float = 0.35) -> str:
